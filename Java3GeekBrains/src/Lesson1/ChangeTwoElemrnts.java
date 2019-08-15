@@ -1,5 +1,7 @@
 package Lesson1;
 
+import java.util.ArrayList;
+
 public class ChangeTwoElemrnts<T>{
 
     //класс для перестановки двух элементов массива с элементами обобщённого типа
@@ -16,6 +18,14 @@ public class ChangeTwoElemrnts<T>{
         obj[el2] = temp;
         temp = null;
         return obj;
+    }
+
+    public ArrayList<?> toArrayList(T[] array){
+        ArrayList<T> ar = new ArrayList<>();
+        for (T t: array){
+            ar.add(t);
+        }
+        return ar;
     }
 
     public void  arrayShow(){
