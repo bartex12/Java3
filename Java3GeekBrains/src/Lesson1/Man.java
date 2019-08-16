@@ -1,4 +1,4 @@
-package Lesson1.ChangeElements;
+package Lesson1;
 
 public class Man{
     String name;
