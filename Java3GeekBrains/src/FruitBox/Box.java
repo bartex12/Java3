@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Box<T extends Fruit> {
 
     private ArrayList<T> ar;
+    String name;
 
-    public Box(){
+    public Box(String name){
         ar = new ArrayList<>();
+        this.name =name;
     }
 
     public void addToBox(T fruit){
@@ -18,18 +20,47 @@ public class Box<T extends Fruit> {
         return ar;
     }
 
+    public String getName() {
+        return name;
+    }
+
+
     public float getWeigth(){
         float weigth = 0f;
         for (T t: ar){
             weigth += t.getWeigth()*t.getCount();
         }
-        System.out.println("Вес коробки = " + weigth+ " условных единиц");
+        System.out.println("Вес коробки " + this.getName() + "= " + weigth+ " условных единиц");
         return weigth;
     }
+
 
     public boolean compare(Box <?> box){
         return this.getWeigth()==box.getWeigth();
     }
 
 
+    public void showBox(){
+        if (ar.size() == 0){
+            System.out.println("В коробке " +this.getName() + " пусто");
+            System.out.println();
+        }else {
+            System.out.println("В коробке " +this.getName() + " находятся: ");
+            for (T t: ar){
+                t.showFruit();
+            }
+            System.out.println();
+        }
+    }
+
+    public void exchangeBox(Box<T> box){
+        ArrayList<T> arBox = box.getAr();
+       for(T t: arBox){
+           ar.add(t);
+       }
+        arBox.clear();
+        System.out.println("После пересыпания из  " +box.getName()+ "  в  "+ this.getName());
+       this.showBox();
+        box.showBox();
+    }
 }

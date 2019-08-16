@@ -6,7 +6,7 @@ public class Orange extends Fruit {
         super(name, 1.5f, count);
     }
 
-    public void showFruit(){
-        System.out.println("name = " +getName()+ " weigth = " +1.5+ " count = " +getCount());
-    }
+//    public void showFruit(){
+//        System.out.println("name = " +getName()+ " weigth = " +1.5+ " count = " +getCount());
+//    }
 }
