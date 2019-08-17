@@ -16,7 +16,7 @@ public class Box<T extends Fruit> {
         ar.add(fruit);
     }
 
-    public void addToBoxArray(T[] fruit){
+    public void addToBoxArray(T... fruit){
         for (T t: fruit){
             ar.add(t);
         }
