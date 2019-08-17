@@ -42,7 +42,13 @@ public class Box<T extends Fruit> {
 
 
     public boolean compare(Box <?> box){
-        return this.getWeigth()==box.getWeigth();
+        boolean isEquel = this.getWeigth()==box.getWeigth();
+        if (isEquel){
+            System.out.println("  Коробки одинакового веса\n");
+        }else{
+            System.out.println("  Коробки не одинакового веса\n");
+        }
+        return isEquel;
     }
 
 
