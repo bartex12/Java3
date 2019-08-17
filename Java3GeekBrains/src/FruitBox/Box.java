@@ -16,6 +16,12 @@ public class Box<T extends Fruit> {
         ar.add(fruit);
     }
 
+    public void addToBoxArray(T[] fruit){
+        for (T t: fruit){
+            ar.add(t);
+        }
+    }
+
     public ArrayList<T> getAr() {
         return ar;
     }
@@ -42,8 +48,7 @@ public class Box<T extends Fruit> {
 
     public void showBox(){
         if (ar.size() == 0){
-            System.out.println("В коробке " +this.getName() + " пусто");
-            System.out.println();
+            System.out.println("В коробке " +this.getName() + " пусто\n");
         }else {
             System.out.println("В коробке " +this.getName() + " находятся: ");
             for (T t: ar){
@@ -55,12 +60,13 @@ public class Box<T extends Fruit> {
 
     public void exchangeBox(Box<T> box){
         ArrayList<T> arBox = box.getAr();
-       for(T t: arBox){
-           ar.add(t);
-       }
+
+        ar.addAll(arBox);
         arBox.clear();
+
         System.out.println("После пересыпания из  " +box.getName()+ "  в  "+ this.getName());
-       this.showBox();
+
+        this.showBox();
         box.showBox();
     }
 }

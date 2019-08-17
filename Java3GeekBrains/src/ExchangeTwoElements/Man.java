@@ -1,4 +1,4 @@
-package Lesson1;
+package ExchangeTwoElements;
 
 public class Man{
     String name;
