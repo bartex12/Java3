@@ -33,8 +33,10 @@ public class BoxFruit_Demo {
         appleBox2.addToBox(new Apple("Golden", 3));
         appleBox2.addToBox(new Apple("Granny", 4));
         appleBox2.showBox();
+
         //АПЕЛЬСИНЫ К ЯБЛОКАМ ПЕРЕСЫПАТЬ НЕ ПОЛУЧИТСЯ, так как разные типы данных
         //appleBox2.exchangeBox(orangeBox2);  // не компилируется, так как разные типы данных
+
         appleBox.exchangeBox(appleBox2); // appleBox2 пересыпаем в appleBox
 
         //***************  сравним вес пустых коробок  *****************
