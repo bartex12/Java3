@@ -1,4 +1,4 @@
-package FruitBox;
+package lesson1.FruitBox;
 
 public class BoxFruit_Demo {
 
