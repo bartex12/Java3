@@ -42,23 +42,6 @@ public class DB_Service {
         }
     }
 
-//    public static void selectAllFromProducts(){
-//
-//    String select =  "SELECT*from products";
-//        try {
-//            rs = statement.executeQuery(select);
-//
-//            while (rs.next()){
-//                int prodId = rs.getInt(2);
-//                String title = rs.getString(3);
-//                float cost = rs.getFloat(4);
-//                System.out.println("prodId = " + prodId + " title = " +title + " cost = " +cost );
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public static void clearTableProducts(){
         String clearTable = "DELETE from products";
         try {
@@ -89,9 +72,7 @@ public class DB_Service {
             //3 Добавляем необходимое количество SQL-запросов в “пакет” с помощью метода addBatch().
             for (int i = 1; i<=10000; i++){
                 preparedStatement.setInt(1,i);
-                //preparedStatement.addBatch();
                 preparedStatement.setString(2,"товар"+i);
-                //preparedStatement.addBatch();
                 preparedStatement.setDouble(3,0.0f+i);
                 preparedStatement.addBatch();
             }
@@ -117,20 +98,20 @@ public class DB_Service {
             if (s.trim().startsWith("/")){
                 ss = s.split(" ");
                 if (ss[0].equals("/цена")){
-                    if ((ss[1]!=null)&&(ss.length==2)){
+                    if (ss.length==2){
                         selectCostWithTitle(ss[1]);
                     }else {
                         System.out.println("Некорректная команда. Попробуйте ещё раз.");
                     }
                 }else if (ss[0].equals("/сменитьцену")){
-                    if ((ss.length == 3)&&(ss[1]!=null) && ((ss[2]!=null))){
+                    if ((ss.length == 3)){
                         changetCostWithTitle(ss[2], ss[1]);
                         selectCostWithTitle(ss[1]);
                     }else {
                         System.out.println("Некорректная команда. Попробуйте ещё раз.");
                     }
                 }else if(ss[0].equals("/товарыпоцене")){
-                    if ((ss.length == 3)&&(ss[1]!=null) && ((ss[2]!=null))){
+                    if ((ss.length == 3)&&(Float.parseFloat(ss[2])>Float.parseFloat(ss[1]))){
                         try {
                             preparedStatement = connection.prepareStatement(
                                     "SELECT  title, cost FROM products where cost BETWEEN ? and ?");
@@ -171,7 +152,6 @@ public class DB_Service {
         try {
             preparedStatement = connection.prepareStatement(
                     "SELECT cost from products WHERE title = ?");
-            //preparedStatement.clearParameters();
             preparedStatement.setString(1,title);
             rs = preparedStatement.executeQuery();
             if (!rs.next()){
@@ -189,7 +169,6 @@ public class DB_Service {
         try {
             preparedStatement = connection.prepareStatement(
                     " UPDATE products set cost = ? where title = ? ");
-            //preparedStatement.clearParameters();
             preparedStatement.setFloat(1,Float.parseFloat(cost));
             preparedStatement.setString(2, title);
             int update = preparedStatement.executeUpdate();
@@ -200,18 +179,13 @@ public class DB_Service {
         }
     }
 
-    public static void disconnect() throws SQLException {
+    public static void disconnect()  {
 
-        try {
-           rs.close();
-            statement.close();
-            //preparedStatement.close();
-            connection.close();
-        }finally {
-            if(connection!=null){
+            try {
                 connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        }
     }
 
 }

@@ -13,14 +13,7 @@ public class Lesson2_Demo {
        DB_Service.insertManyProd();
         System.out.println();
 
-        //*************** Запускаем консольное приложение  ************
-        DB_Service.consoleApp();
-
-//
-//        try {
-//            DB_Service.disconnect();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        //********* Закрываем соединение с базой ************
+        DB_Service.disconnect();
     }
 }
