@@ -3,6 +3,7 @@ package lesson2_CreateTable;
 import java.sql.*;
 import java.util.Scanner;
 
+//класс для организации работы с базой данных
 public class DB_Service {
 
    static Connection connection;
@@ -12,6 +13,7 @@ public class DB_Service {
     static String[] ss = null;
 
 
+    //метод для подключения к базе данных
     public static void connect() {
         try {
             Class.forName("org.sqlite.JDBC");
@@ -26,8 +28,8 @@ public class DB_Service {
         }
     }
 
+    //метод для создания таблицы products
     public static void createTableProducts(){
-
     String createTable =" CREATE TABLE IF NOT EXISTS products \n" +
             " (\n" + " id\tINTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
             "\t prodId\tINTEGER NOT NULL ,\n" +
@@ -42,6 +44,7 @@ public class DB_Service {
         }
     }
 
+    // метод удаления таблицы products из базы данных
     public static void clearTableProducts(){
         String clearTable = "DELETE from products";
         try {
@@ -53,6 +56,7 @@ public class DB_Service {
         }
     }
 
+    //метод для вставки 10000 строк в базу данных
     public static void insertManyProd(){
 
 //        Для того, чтобы создать пакет, нам необходимо:
@@ -86,6 +90,7 @@ public class DB_Service {
         }
     }
 
+    //Метод, реализующий консольное приложение
     public static void consoleApp(){
         Scanner in = new Scanner(System.in);
         System.out.print("Введите запрос,например \n" +
@@ -99,43 +104,27 @@ public class DB_Service {
                 ss = s.split(" ");
                 if (ss[0].equals("/цена")){
                     if (ss.length==2){
+                        //метод для выборки цены по названию товара
                         selectCostWithTitle(ss[1]);
                     }else {
                         System.out.println("Некорректная команда. Попробуйте ещё раз.");
                     }
                 }else if (ss[0].equals("/сменитьцену")){
                     if ((ss.length == 3)){
+                        //метод для изменения цены указанного товара
                         changetCostWithTitle(ss[2], ss[1]);
+                        //метод для выборки цены по названию товара
                         selectCostWithTitle(ss[1]);
                     }else {
                         System.out.println("Некорректная команда. Попробуйте ещё раз.");
                     }
                 }else if(ss[0].equals("/товарыпоцене")){
                     if ((ss.length == 3)&&(Float.parseFloat(ss[2])>Float.parseFloat(ss[1]))){
-                        try {
-                            preparedStatement = connection.prepareStatement(
-                                    "SELECT  title, cost FROM products where cost BETWEEN ? and ?");
-                            preparedStatement.setFloat(1,Float.parseFloat(ss[1]));
-                            preparedStatement.setFloat(2,Float.parseFloat(ss[2]));
-                            rs = preparedStatement.executeQuery();
-                            if (!rs.next()){
-                                System.out.println("Такие товары отсутствуют");
-                            }else {
-                                System.out.println("Товары с ценами от " + ss[1] +" до " + ss[2]);
-                                System.out.println("----------------------------");
-                                do{
-                                    String title = rs.getString("title");
-                                    float cost = rs.getFloat("cost");
-                                    System.out.println("товар: "+title + " Цена = " + cost);
-                                }while (rs.next());
-                            }
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
+                        //метод для выборки товаров в диапазоне цен
+                        selectProdWithCosts(ss[1], ss[2]);
                     }else {
                         System.out.println("Некорректная команда. Попробуйте ещё раз.");
                     }
-                    //System.out.println(" ss[0].equals(/товарыпоцене)");
                 }else if(ss[0].equals("/exit")){
                     System.out.println(" Выход из приложения ");
                     return;
@@ -148,6 +137,31 @@ public class DB_Service {
         }
     }
 
+    //метод для выборки товаров в диапазоне цен
+    public static void selectProdWithCosts(String minCost, String maxCost){
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "SELECT  title, cost FROM products where cost BETWEEN ? and ?");
+            preparedStatement.setFloat(1,Float.parseFloat(minCost));
+            preparedStatement.setFloat(2,Float.parseFloat(maxCost));
+            rs = preparedStatement.executeQuery();
+            if (!rs.next()){
+                System.out.println("Такие товары отсутствуют");
+            }else {
+                System.out.println("Товары с ценами от " + minCost +" до " + maxCost);
+                System.out.println("----------------------------");
+                do{
+                    String title = rs.getString("title");
+                    float cost = rs.getFloat("cost");
+                    System.out.println("товар: "+title + " Цена = " + cost);
+                }while (rs.next());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //метод для выборки цены по названию товара
     public static void selectCostWithTitle(String title){
         try {
             preparedStatement = connection.prepareStatement(
@@ -165,6 +179,7 @@ public class DB_Service {
         }
     }
 
+    //метод для изменения цены указанного товара
     public static void changetCostWithTitle(String cost, String title){
         try {
             preparedStatement = connection.prepareStatement(
@@ -179,6 +194,7 @@ public class DB_Service {
         }
     }
 
+    //разрыв соединения с базой данных
     public static void disconnect()  {
 
             try {
