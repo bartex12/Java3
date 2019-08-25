@@ -1,6 +1,6 @@
-package lesson2_Console;
+package Lesson2.lesson2_Console;
 
-import lesson2_CreateTable.DB_Service;
+import Lesson2.lesson2_CreateTable.DB_Service;
 
 public class lesson2_ConsoleDemo {
     public static void main(String[] args) {

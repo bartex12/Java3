@@ -1,4 +1,4 @@
-package lesson2_CreateTable;
+package Lesson2.lesson2_CreateTable;
 
 public class Lesson2_Demo {
     public static void main(String[] args) {

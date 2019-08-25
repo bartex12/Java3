@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ad750c-0335-4ab8-ba94-0116d1a9c536" name="Default Changelist" comment="" />
+    <list default="true" id="c3ad750c-0335-4ab8-ba94-0116d1a9c536" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/less2_SQLite.db" beforeDir="false" afterPath="$PROJECT_DIR$/less2_SQLite.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson2_Console/lesson2_ConsoleDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson2/lesson2_Console/lesson2_ConsoleDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson2_CreateTable/DB_Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson2/lesson2_CreateTable/DB_Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson2_CreateTable/Lesson2_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson2/lesson2_CreateTable/Lesson2_Demo.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +19,30 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/sql/PreparedStatement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lesson2/lesson2_Console/lesson2_ConsoleDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Lesson2/lesson2_CreateTable/Lesson2_Demo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -71,6 +95,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,14 +111,38 @@
             </path>
             <path>
               <item name="Java3GeekBrains" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java3GeekBrains" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lesson1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java3GeekBrains" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java3GeekBrains" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java3GeekBrains" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java3GeekBrains" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson2" type="462c0819:PsiDirectoryNode" />
+              <item name="lesson2_Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java3GeekBrains" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java3GeekBrains" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson2" type="462c0819:PsiDirectoryNode" />
+              <item name="lesson2_CreateTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java3GeekBrains" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -115,14 +165,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="change" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.l1_fruit">
+    <configuration name="l1_exchange" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="lesson1.ExchangeTwoElements.ChangeTwoElemrnts_Demo" />
       <module name="Java3GeekBrains" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="l1_fruit" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="lesson1.FruitBox.BoxFruit_Demo" />
+      <module name="Java3GeekBrains" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="l2_console" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Lesson2.lesson2_Console.lesson2_ConsoleDemo" />
+      <module name="Java3GeekBrains" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="l2_createTable" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Lesson2.lesson2_CreateTable.Lesson2_Demo" />
+      <module name="Java3GeekBrains" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.l1_fruit" />
+      <item itemvalue="Application.l1_exchange" />
+      <item itemvalue="Application.l2_console" />
+      <item itemvalue="Application.l2_createTable" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -141,7 +218,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19595142" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19919029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -201,21 +278,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson2_CreateTable/Lesson2_Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson2_Console/lesson2_ConsoleDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson2_CreateTable/DB_Service.java">
+    <entry file="file://$PROJECT_DIR$/src/Lesson2/lesson2_CreateTable/DB_Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="143" column="80" selection-start-line="143" selection-start-column="80" selection-end-line="143" selection-end-column="80" />
@@ -229,6 +292,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson2/lesson2_Console/lesson2_ConsoleDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson2/lesson2_CreateTable/Lesson2_Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-package lesson2_CreateTable;
+package Lesson2.lesson2_CreateTable;
 
 import java.sql.*;
 import java.util.Scanner;
