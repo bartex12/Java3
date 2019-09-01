@@ -1,4 +1,4 @@
-package com.batiaev.java3.Lesson5.metodichka_Lesson5.dz_Lesson5;
+package Lesson5;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
